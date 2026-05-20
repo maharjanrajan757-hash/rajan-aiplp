@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fffaf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #282220;
+  background:
+    radial-gradient(circle at top left, rgba(249, 214, 206, 0.55), transparent 32rem),
+    linear-gradient(180deg, #fffaf8 0%, #ffffff 42%, #fff8f6 100%);
+}
+
+button,
+a,
+input,
+textarea {
+  letter-spacing: 0;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-rosegold-600 px-6 py-3 text-sm font-bold text-white shadow-glow transition hover:bg-rosegold-700 focus:outline-none focus:ring-4 focus:ring-rosegold-200 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-rosegold-200 bg-white px-6 py-3 text-sm font-bold text-rosegold-800 transition hover:border-rosegold-300 hover:bg-rosegold-50 focus:outline-none focus:ring-4 focus:ring-rosegold-100;
+}
+
+.field-label {
+  @apply text-sm font-semibold text-ink;
+}
+
+.field-input {
+  @apply mt-2 w-full rounded-2xl border border-rosegold-100 bg-white px-4 py-3 text-base text-ink shadow-sm outline-none transition placeholder:text-stone-400 focus:border-rosegold-400 focus:ring-4 focus:ring-rosegold-100;
+}
