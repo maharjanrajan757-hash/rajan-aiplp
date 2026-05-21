@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
-import { ArrowLeft, CheckCircle2, Headphones, LockKeyhole, PackageCheck, PhoneCall, ShieldCheck, Truck } from "lucide-react";
+import { ArrowLeft, LockKeyhole, PackageCheck, PhoneCall, ShieldCheck, Truck } from "lucide-react";
 import { CheckoutForm } from "@/components/CheckoutForm";
 import { product } from "@/lib/product";
 
@@ -31,18 +31,6 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-[1.6rem] border border-white/10 bg-white">
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src="/images/products/pink-butterfly-set.png"
-                  alt="StyleNest jewelry combo preview"
-                  fill
-                  sizes="(min-width: 1024px) 360px, 100vw"
-                  className="object-contain p-4"
-                />
-              </div>
-            </div>
-
             <h1 className="mt-6 font-serif text-3xl font-black leading-tight sm:text-4xl">Secure Cash On Delivery checkout</h1>
             <p className="mt-4 leading-7 text-white/75">
               Fill in your details and place your order. Our sales representative will call you soon to confirm delivery.
@@ -69,27 +57,19 @@ export default function CheckoutPage() {
               })}
             </div>
 
-            <div className="mt-4 rounded-3xl bg-white/10 p-4">
-              <div className="flex items-center gap-3 font-bold">
-                <LockKeyhole size={20} />
-                Your details are handled securely
-              </div>
-              <p className="mt-3 text-sm leading-6 text-white/70">
-                No online payment is required. You pay only when your order arrives.
-              </p>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="mt-5 space-y-3">
               {[
-                { icon: ShieldCheck, text: "COD available" },
-                { icon: Headphones, text: "Friendly support" },
-                { icon: CheckCircle2, text: "Free delivery" },
-                { icon: Truck, text: "Fast dispatch" }
+                { icon: ShieldCheck, text: "Your private details stay server-side" },
+                { icon: PackageCheck, text: "We call before confirming delivery" },
+                { icon: LockKeyhole, text: "No online payment required" }
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.text} className="flex items-center gap-2 rounded-2xl bg-white/[0.07] px-4 py-3 text-sm font-bold text-white/85">
-                    <Icon size={17} className="text-rosegold-200" />
+                  <div
+                    key={item.text}
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/30 px-4 py-4 text-base font-semibold text-white shadow-sm"
+                  >
+                    <Icon size={20} className="shrink-0 text-rosegold-200" />
                     {item.text}
                   </div>
                 );
